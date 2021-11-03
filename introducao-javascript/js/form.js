@@ -1,23 +1,26 @@
-var botaoAdd = document.querySelector("#adicionar-paciente"); 
-botaoAdd.addEventListener("click",function(event){
+var botaoAdd = document.querySelector("#adicionar-paciente");
+botaoAdd.addEventListener("click", function (event) {
     event.preventDefault();
     var form = document.querySelector("#form-adiciona");
 
-    var paciente = obtemPctDoFormulario(form);  
-    
+    var paciente = obtemPctDoFormulario(form);
+
     var pacienteTR = montaTr(paciente);
 
-    if(!validaPaciente(paciente)){
-        console.log("Paciente inválido")
+    var erros = validaPaciente(paciente);
+
+    if (erros.length > 0) {
+        var mensagemErro = document.querySelector("#mensagem-erro");
+        mensagemErro.textContent = erros;
         return;
     }
-    
+
     var tabela = document.querySelector("#tabela-pacientes");
     tabela.appendChild(pacienteTR);
     form.reset();
 });
 
-function obtemPctDoFormulario(form){
+function obtemPctDoFormulario(form) {
     var paciente = {
         nome: form.nome.value,
         peso: form.peso.value,
@@ -28,7 +31,7 @@ function obtemPctDoFormulario(form){
     return paciente;
 }
 
-function montaTr(paciente){
+function montaTr(paciente) {
     var pacienteTR = document.createElement("tr");
     pacienteTR.classList.add("paciente");
 
@@ -41,7 +44,7 @@ function montaTr(paciente){
     return pacienteTR;
 }
 
-function montaTd(dado, classe){
+function montaTd(dado, classe) {
     var td = document.createElement("td");
     td.textContent = dado;
     td.classList.add(classe);
@@ -49,10 +52,15 @@ function montaTd(dado, classe){
     return td;
 }
 
-function validaPaciente(paciente){
-    if(valisaPeso(paciente.peso) && valisaAltura(paciente.altura)){
-        return true;
-    }else{
-        return false;
+function validaPaciente(paciente) {
+    var erros = [];
+
+    if (!valisaPeso(paciente.peso)) {
+        erros.push("Peso é inválido");
     }
+    if (!valisaAltura(paciente.altura)) {
+        erros.push("Altura é inválida");
+    }
+
+    return erros;
 } 
