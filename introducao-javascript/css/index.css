@@ -149,7 +149,24 @@ button[disabled=disabled], button:disabled {
 	width: 300px;
 	height: 30px;
 	margin-bottom: 10px;
+	border-radius: 10px;
+	padding: 0.5rem 1rem;
 }
 .invisivel{
 	display: none;
+}
+#buscar-pacientes{
+	width: 190px;
+	height: 50px;
+	background: #555;
+	border-radius: 20px;
+}
+#adicionar-paciente{
+	width: 190px;
+	height: 50px;
+	background: #555;
+	border-radius: 20px;
+}
+#erro-ajax{
+	color: red;
 }
