@@ -5,6 +5,9 @@ export class ContaC {
     _cliente;
     _saldo = 0;
     //parâmetros
+    
+
+
     set cliente(novoValor){
         if(novoValor instanceof Cliente){
             this._cliente = novoValor;
