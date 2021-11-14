@@ -12,4 +12,4 @@ const contaCL = new ContaC(cliente2,102);
 contaCR.transferir(200, contaCL)
 
 //final
-console.log(ContaC.numeroDeContas);
+console.log(contaCL);
