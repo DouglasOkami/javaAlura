@@ -1,13 +1,7 @@
 import { Cliente } from "./Cliente.js";
 export class ContaC {
     static numeroDeContas = 0;
-    agencia;
-    _cliente;
-    _saldo = 0;
     //parâmetros
-    
-
-
     set cliente(novoValor){
         if(novoValor instanceof Cliente){
             this._cliente = novoValor;
@@ -24,6 +18,7 @@ export class ContaC {
     constructor(cliente,agencia){
         this.cliente = cliente;
         this.agencia = agencia;
+        this._saldo = 0;
         ContaC.numeroDeContas += 1;   
     }
     
