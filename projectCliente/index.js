@@ -1,6 +1,7 @@
 import { Cliente } from "./Cliente.js";
 import { ContaC } from "./ContaC.js";
 import { ContaPoupanca } from "./ContaPoupanca.js";
+
 //dados
 const cliente1 = new Cliente( "Ricardo", 1122334455);
 
@@ -10,7 +11,8 @@ contaCR.depositar(500);
 contaCR.sacar(100);
 
 //conta Poupança
-const contaPoupanca = new ContaPoupanca(50, cliente1, 1001)
+const contaPoupanca = new ContaPoupanca(50,cliente1, 1001)
+contaPoupanca.sacar(10);
 
 //final
 console.log(contaPoupanca);
