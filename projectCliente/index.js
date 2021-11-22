@@ -1,7 +1,7 @@
 import { Cliente } from "./Cliente.js";
-import { ContaC } from "./ContaC.js";
-import { ContaPoupanca } from "./ContaPoupanca.js";
-import { ContaSalario } from "./contaSalario.js";
+import { ContaC } from "./Conta/ContaC";
+import { ContaPoupanca } from "./Conta/ContaPoupanca.js";
+import { ContaSalario } from "./Conta/contaSalario.js";
 
 //dados
 const cliente1 = new Cliente( "Ricardo", 1122334455);
