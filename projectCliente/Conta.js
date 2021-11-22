@@ -1,5 +1,9 @@
 export class Conta {
     constructor(saldoInicial, cliente, agencia) {
+        //classe abstrata
+        if(this.constructor == Conta){
+            throw new Error("Você não deveria instânciar um objeto do tipo conta diretamente");
+        }
         this._saldo = saldoInicial;
         this._cliente = cliente;
         this._agencia = agencia;
