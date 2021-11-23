@@ -1,6 +1,5 @@
 import { Cliente } from "./Cliente.js";
 import { Gerente } from "./Funcionarios/Gerente.js";
-import { Funcionario } from "./Funcionarios/Funcionario.js";
 import { Diretor } from "./Funcionarios/Diretor.js";
 import { SistemaAutenticacao } from "./SistemaAutenticacao.js";
 //parte 1
@@ -36,8 +35,14 @@ const diretor = new Diretor("Diretor",10000, 123456789);
 diretor.cadastrarSenha("123456")
 //Gerente
 const gerente = new Gerente("Nicolas", 2000, 98989898);
-
+gerente.cadastrarSenha("123")
+//Cliente
+const cliente = new Cliente ("Debora",87878787, "456")
 //login
-const estaLogado = SistemaAutenticacao.login(diretor, "123456"); 
+const diretorLogin = SistemaAutenticacao.login(diretor, "123456"); 
+const gerenteLogin = SistemaAutenticacao.login(gerente, "123");
+const clienteLogin = SistemaAutenticacao.login(cliente, "456"); 
 
-console.log(estaLogado);
+console.log(diretorLogin);
+console.log(gerenteLogin);
+console.log(clienteLogin);
